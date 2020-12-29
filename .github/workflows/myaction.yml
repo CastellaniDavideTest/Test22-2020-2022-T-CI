@@ -16,5 +16,10 @@ jobs:
         python-version: 3.8
     - name: Create file
       run: |
-        python3 -c "import os;content = '';for folder in [x for x in os.listdir('./') if not x[0] == '.'] : print('H');open('README.md', 'w+').write(content)"
+        python3 << EOF
+        import os
+
+        for i in [x for x in os.listdir('./') if not x[0] == '.']: print(i)        
+        open('README.md', 'w+').write('# Lavori di Castellani Davide')                          
+        EOF
         cat README.md
