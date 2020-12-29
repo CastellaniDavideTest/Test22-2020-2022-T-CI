@@ -16,4 +16,4 @@ jobs:
         python-version: 3.8
     - name: Create file
       run: |
-        python3 -c "import os;print([x for x in os.listdir('')])"
+        python3 -c "import os;print([x for x in os.listdir('./')])"
