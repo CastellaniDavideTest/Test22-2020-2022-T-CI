@@ -20,7 +20,7 @@ jobs:
         import os
         file_content = '# Lavori di Castellani Davide\n'
 
-        for i in [x for x in os.listdir('./') if not x[0] == '.']: file_content += f' - [{i}](https://github.com/CastellaniDavideTest/Test22-2020-2022-T-CI/blob/18576/{i}/docs/README.md)\n'
+        for i in [x for x in os.listdir('./') if not x[0] == '.' and os.path.isdir(x)]: file_content += f' - [{i}](https://github.com/CastellaniDavideTest/Test22-2020-2022-T-CI/blob/18576/{i}/docs/README.md)\n'
         open('README.md', 'w+').write(file_content)                          
         EOF
         cat README.md
