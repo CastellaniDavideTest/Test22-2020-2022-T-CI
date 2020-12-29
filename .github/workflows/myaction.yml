@@ -16,5 +16,5 @@ jobs:
         python-version: 3.8
     - name: Create file
       run: |
-        python3 -c "import os;open('README.md', 'w+').write(str([x for x in os.listdir('./') if not x[0] == '.']))"
+        python3 -c "import os;content = '';for folder in [x for x in os.listdir('./') if not x[0] == '.'] : content += ' - ' + x;open('README.md', 'w+').write(content)"
         cat README.md
