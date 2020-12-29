@@ -24,3 +24,6 @@ jobs:
         open('README.md', 'w+').write(file_content)                          
         EOF
         cat README.md
+    - name: Upload file
+      run: |
+        git add *; git commit -m "Update README.md"; git push
