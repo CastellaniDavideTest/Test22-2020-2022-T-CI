@@ -26,8 +26,9 @@ jobs:
         cat README.md
     - name: Upload file
       run: |
-        rm -rf .git
-        git init
-        git add .
-        git commit -m 'New README.md'
-        git push --force 18576:git@github.com:CastellaniDavideTest/Test22-2020-2022-T-CI.git
+        git config --global user.name 'DavideC03'
+        git config --global user.email 'help@castellanidavide.it'
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+        git checkout "${GITHUB_REF:11}"
+        git commit -am "Update README.md"
+        git push
