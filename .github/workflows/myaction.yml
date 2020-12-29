@@ -16,4 +16,4 @@ jobs:
         python-version: 3.8
     - name: Create file
       run: |
-        python -c "import os\nprint([x[0] for x in os.walk(directory)])"
+        python3 -c "import os;print([x for x in os.listdir('')])"
