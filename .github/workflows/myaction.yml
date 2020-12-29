@@ -12,5 +12,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install dependencies
       run: |
-        ls -d */
-        
+        sudo apt install moreutils -y
+        ls -d * -1 | ts - > README.md
+        cat README.md
