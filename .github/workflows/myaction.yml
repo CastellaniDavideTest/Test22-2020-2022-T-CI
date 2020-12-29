@@ -26,4 +26,6 @@ jobs:
         cat README.md
     - name: Upload file
       run: |
-        git add *; git commit -m "Update README.md"; git push https://$${{ secrets.GITHUB_TOKEN }}@github.com:CastellaniDavideTest/Test22-2020-2022-T-CI.git
+        git add *
+        git commit -m "Update README.md"
+        git push https://$${{ secrets.GITHUB_TOKEN }}@github.com:CastellaniDavideTest/Test22-2020-2022-T-CI.git --global
