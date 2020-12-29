@@ -18,8 +18,9 @@ jobs:
       run: |
         python3 << EOF
         import os
+        file_content = '# Lavori di Castellani Davide\n'
 
-        for i in [x for x in os.listdir('./') if not x[0] == '.']: print(i)        
-        open('README.md', 'w+').write('# Lavori di Castellani Davide')                          
+        for i in [x for x in os.listdir('./') if not x[0] == '.']: file_content += ' - [i](f'https://github.com/CastellaniDavideTest/Test22-2020-2022-T-CI/blob/18576/{i}/docs/README.md')
+        open('README.md', 'w+').write(file_content)                          
         EOF
         cat README.md
