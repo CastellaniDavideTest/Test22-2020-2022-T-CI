@@ -10,8 +10,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Install dependencies
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: Create file
       run: |
-        sudo apt install moreutils -y
-        ls -d * -1 | ts - > README.md
-        cat README.md
+        python -c "import os\nprint([x[0] for x in os.walk(directory)])"
