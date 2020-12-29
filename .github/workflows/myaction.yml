@@ -1,1 +1,16 @@
+# Test all for Castellani Davide
+name: Create md
 
+on: push
+
+jobs:
+  create-md:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: |
+        ls
+        
